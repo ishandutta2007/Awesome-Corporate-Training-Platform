@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080d1a"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+
+    <!-- Accent Text Gradient -->
+    <linearGradient id="primaryTextGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <linearGradient id="accentCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#4facfe"/>
+    </linearGradient>
+
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <style>
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-7px); }
+      }
+      @keyframes floatReverse {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(7px); }
+      }
+      @keyframes dashAnim {
+        to { stroke-dashoffset: -120; }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.35; transform: scale(1); }
+        50% { opacity: 0.85; transform: scale(1.08); }
+      }
+      @keyframes beaconBlink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.3; }
+      }
+      .floating-node-1 { animation: floatSlow 5s ease-in-out infinite; }
+      .floating-node-2 { animation: floatReverse 6s ease-in-out infinite; }
+      .learning-track { stroke-dasharray: 8 6; animation: dashAnim 15s linear infinite; }
+      .pulse-halo { transform-origin: 980px 190px; animation: pulseGlow 4s ease-in-out infinite; }
+      .beacon { animation: beaconBlink 2s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1200" height="380" rx="16" fill="url(#bgGrad)"/>
+
+  <!-- Border Highlight -->
+  <rect x="2" y="2" width="1196" height="376" rx="15" fill="none" stroke="#334155" stroke-width="1.5" opacity="0.6"/>
+  <rect x="8" y="8" width="1184" height="364" rx="12" fill="none" stroke="#38bdf8" stroke-width="0.75" opacity="0.2"/>
+
+  <!-- Geometric Grid Matrix Pattern -->
+  <g opacity="0.07" stroke="#38bdf8" stroke-width="1">
+    <line x1="0" y1="60" x2="1200" y2="60"/>
+    <line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    
+    <line x1="120" y1="0" x2="120" y2="380"/>
+    <line x1="240" y1="0" x2="240" y2="380"/>
+    <line x1="360" y1="0" x2="360" y2="380"/>
+    <line x1="480" y1="0" x2="480" y2="380"/>
+    <line x1="600" y1="0" x2="600" y2="380"/>
+    <line x1="720" y1="0" x2="720" y2="380"/>
+    <line x1="840" y1="0" x2="840" y2="380"/>
+    <line x1="960" y1="0" x2="960" y2="380"/>
+    <line x1="1080" y1="0" x2="1080" y2="380"/>
+  </g>
+
+  <!-- Ambient Glow Behind Right Side Hub -->
+  <circle cx="980" cy="190" r="140" fill="#38bdf8" opacity="0.08" filter="url(#glow)"/>
+  <circle cx="980" cy="190" r="80" fill="#818cf8" opacity="0.12" filter="url(#glow)"/>
+
+  <!-- Animated Pathway Curves -->
+  <path d="M 100,320 C 320,240 500,300 740,190 S 920,130 980,190" fill="none" stroke="#38bdf8" stroke-width="2.5" opacity="0.4" class="learning-track"/>
+  <path d="M 100,320 C 320,240 500,300 740,190 S 920,130 980,190" fill="none" stroke="#818cf8" stroke-width="6" opacity="0.12" filter="url(#glow)"/>
+
+  <path d="M 180,340 C 400,300 580,330 800,230 S 950,110 1060,130" fill="none" stroke="#34d399" stroke-width="1.2" opacity="0.25" stroke-dasharray="4 4"/>
+
+  <!-- Right Visual Hub: Learning Ecosystem Node Network -->
+  <g transform="translate(0, 0)">
+    <!-- Central Hub Orbit Rings -->
+    <circle cx="980" cy="190" r="120" fill="none" stroke="#334155" stroke-width="1" opacity="0.5"/>
+    <circle cx="980" cy="190" r="90" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.3" stroke-dasharray="6 4"/>
+    <circle cx="980" cy="190" r="60" fill="none" stroke="#818cf8" stroke-width="1.2" opacity="0.45"/>
+    <circle cx="980" cy="190" r="28" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+    <circle cx="980" cy="190" r="8" fill="#38bdf8" filter="url(#subtleGlow)"/>
+
+    <!-- Animated Pulse Rings -->
+    <circle cx="980" cy="190" r="45" fill="none" stroke="#38bdf8" stroke-width="1.5" class="pulse-halo"/>
+
+    <!-- Hub Node 1: AI Upskilling (Top Left) -->
+    <g transform="translate(900, 110)" class="floating-node-1">
+      <rect x="0" y="0" width="105" height="38" rx="8" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1.2"/>
+      <circle cx="16" cy="19" r="5" fill="#38bdf8" class="beacon"/>
+      <text x="30" y="18" fill="#f8fafc" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700">AI Upskilling</text>
+      <text x="30" y="29" fill="#94a3b8" font-family="'Segoe UI', Roboto, sans-serif" font-size="9">Skills Engine</text>
+      <line x1="52" y1="38" x2="80" y2="80" stroke="#38bdf8" stroke-width="1" opacity="0.3"/>
+    </g>
+
+    <!-- Hub Node 2: Compliance LMS (Top Right) -->
+    <g transform="translate(1030, 95)" class="floating-node-2">
+      <rect x="0" y="0" width="115" height="38" rx="8" fill="url(#cardGrad)" stroke="#34d399" stroke-width="1.2"/>
+      <circle cx="16" cy="19" r="5" fill="#34d399" class="beacon"/>
+      <text x="30" y="18" fill="#f8fafc" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700">Compliance</text>
+      <text x="30" y="29" fill="#94a3b8" font-family="'Segoe UI', Roboto, sans-serif" font-size="9">Certifications</text>
+      <line x1="20" y1="38" x2="-50" y2="95" stroke="#34d399" stroke-width="1" opacity="0.3"/>
+    </g>
+
+    <!-- Hub Node 3: Onboarding & SOPs (Bottom Left) -->
+    <g transform="translate(860, 245)" class="floating-node-2">
+      <rect x="0" y="0" width="115" height="38" rx="8" fill="url(#cardGrad)" stroke="#c084fc" stroke-width="1.2"/>
+      <circle cx="16" cy="19" r="5" fill="#c084fc" class="beacon"/>
+      <text x="30" y="18" fill="#f8fafc" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700">Onboarding</text>
+      <text x="30" y="29" fill="#94a3b8" font-family="'Segoe UI', Roboto, sans-serif" font-size="9">Playbooks &amp; SOP</text>
+      <line x1="80" y1="0" x2="120" y2="-55" stroke="#c084fc" stroke-width="1" opacity="0.3"/>
+    </g>
+
+    <!-- Hub Node 4: Extended Enterprise (Bottom Right) -->
+    <g transform="translate(1015, 255)" class="floating-node-1">
+      <rect x="0" y="0" width="125" height="38" rx="8" fill="url(#cardGrad)" stroke="#f59e0b" stroke-width="1.2"/>
+      <circle cx="16" cy="19" r="5" fill="#f59e0b" class="beacon"/>
+      <text x="30" y="18" fill="#f8fafc" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700">Extended LMS</text>
+      <text x="30" y="29" fill="#94a3b8" font-family="'Segoe UI', Roboto, sans-serif" font-size="9">Partners &amp; Clients</text>
+      <line x1="10" y1="0" x2="-35" y2="-65" stroke="#f59e0b" stroke-width="1" opacity="0.3"/>
+    </g>
+  </g>
+
+  <!-- Left Header & Branding Area -->
+  <g transform="translate(60, 48)">
+    <!-- Category Pill Badge -->
+    <g>
+      <rect x="0" y="0" width="345" height="28" rx="14" fill="#0f2444" stroke="#38bdf8" stroke-width="1.2" opacity="0.95"/>
+      <circle cx="14" cy="14" r="4" fill="#38bdf8" filter="url(#subtleGlow)"/>
+      <text x="28" y="18" fill="#38bdf8" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="11" font-weight="800" letter-spacing="1.5">ENTERPRISE L&amp;D &amp; LMS ECOSYSTEM</text>
+    </g>
+
+    <!-- Main Title -->
+    <g transform="translate(0, 72)">
+      <text x="0" y="0" fill="#ffffff" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="38" font-weight="900" letter-spacing="-0.5">Awesome Corporate</text>
+      <text x="0" y="44" fill="url(#primaryTextGrad)" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="38" font-weight="900" letter-spacing="-0.5">Training Platform 🎓</text>
+    </g>
+
+    <!-- Subtitle / Mission Statement -->
+    <text x="0" y="152" fill="#94a3b8" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="14.5" font-weight="400">
+      Curated directory of enterprise Learning Management Systems (LMS), SaaS L&amp;D tools,
+    </text>
+    <text x="0" y="174" fill="#cbd5e1" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="14" font-weight="500">
+      AI-driven skills platforms, compliance suites &amp; self-hosted open-source training infrastructure.
+    </text>
+
+    <!-- Feature Pillars / Key Badges -->
+    <g transform="translate(0, 205)">
+      <!-- Badge 1: Employee LMS & L&D -->
+      <g>
+        <rect x="0" y="0" width="138" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="12" y="17" fill="#38bdf8" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">🎯 Employee LMS</text>
+      </g>
+
+      <!-- Badge 2: Compliance & Certs -->
+      <g transform="translate(148, 0)">
+        <rect x="0" y="0" width="168" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="12" y="17" fill="#34d399" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">🛡️ Compliance &amp; Certs</text>
+      </g>
+
+      <!-- Badge 3: AI Skills Mapping -->
+      <g transform="translate(326, 0)">
+        <rect x="0" y="0" width="158" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="12" y="17" fill="#c084fc" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">⚡ AI Skills &amp; Growth</text>
+      </g>
+
+      <!-- Badge 4: Open Source & Self-Hosted -->
+      <g transform="translate(494, 0)">
+        <rect x="0" y="0" width="168" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="12" y="17" fill="#f59e0b" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">🌐 Open Source &amp; SaaS</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Corner Tech Accent Borders -->
+  <g stroke="#38bdf8" stroke-width="1.5" opacity="0.5" fill="none">
+    <path d="M 20,35 L 20,20 L 35,20"/>
+    <path d="M 1180,35 L 1180,20 L 1165,20"/>
+    <path d="M 20,345 L 20,360 L 35,360"/>
+    <path d="M 1180,345 L 1180,360 L 1165,360"/>
+  </g>
+</svg>
